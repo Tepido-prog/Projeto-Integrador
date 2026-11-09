@@ -26,48 +26,47 @@ public class AnalisadorTexto {
         System.out.println("          ANÁLISE FILOSÓFICA");
         System.out.println("========================================");
 
-        boolean encontrou = false;
+        int maiorPontuacao = 0;
+        Regra melhorRegra = null;
 
-        for (Regra regra : repositorioRegras.getRegras()) {
+    for (Regra regra : repositorioRegras.getRegras()) {
 
-            if (regra.verificar(texto.getConteudo())) {
-                encontrou = true;
+    int pontuacao = regra.calcularPontuacao(texto.getConteudo());
 
-                System.out.println("\nPossível autor associado: "
-                    + regra.getAutor().getNome());
+    if (pontuacao > maiorPontuacao) {
 
-                System.out.println("Época: "
-                    + regra.getAutor().getEpoca());
+        maiorPontuacao = pontuacao;
+        melhorRegra = regra;
 
-                System.out.println("Tema: "
-                    + regra.getTema());
+    }
+}
 
-                System.out.println("Conceito: "
-                    + regra.getConceito().getNome());
+    if (melhorRegra != null) {
 
-                System.out.println("Explicação: "
-                    + regra.getConceito().getExplicacao());
+        Autor autor = melhorRegra.getAutor();
+        Conceito conceito = melhorRegra.getConceito();
 
-                System.out.println("Palavras-chave da regra: "
-                    + regra.getPalavrasChave());
+        //teste
+        System.out.println("Pontuação: " + maiorPontuacao);
+        
+        System.out.println("Possível autor associado: " + autor.getNome());
+        System.out.println("Época: " + autor.getEpoca());
+        System.out.println("Tema: " + melhorRegra.getTema());
+        System.out.println("Conceito: " + conceito.getNome());
+        System.out.println("Explicação: " + conceito.getExplicacao());
 
-                System.out.println("----------------------------------------");
-            }
-        }
+} else {
 
-        if (!encontrou) {
+    System.out.println("Nenhuma regra correspondente foi encontrada.");
 
-            System.out.println("\nNenhuma regra correspondente foi encontrada.");
+}
 
-            System.out.println(
-                "Tente inserir um texto com conceitos reconhecidos pelo programa."
-            );
-        }
+    System.out.println("----------------------------------------");
 
-        System.out.println("\n========================================");
-System.out.println("       DICIONÁRIO FILOSÓFICO");
-System.out.println("========================================");
+    System.out.println("\n========================================");
+    System.out.println("       DICIONÁRIO FILOSÓFICO");
+    System.out.println("========================================");
 
-dicionario.buscarNoTexto(texto.getConteudo());
+    dicionario.buscarNoTexto(texto.getConteudo());
     }
 }
