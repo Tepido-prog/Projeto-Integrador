@@ -1,0 +1,82 @@
+import java.util.ArrayList;
+
+public class RepositorioConceito {
+
+    private ArrayList<Conceito> conceitos = new ArrayList<>();
+
+    public RepositorioConceito() {
+
+        Conceito virtude = new Conceito(
+            "Virtude",
+            "Disposição para agir de maneira excelente, relacionada à formação do caráter."
+        );
+
+        Conceito mundoIdeias = new Conceito(
+            "Mundo das Ideias",
+            "Na filosofia platônica, refere-se à realidade inteligível das Formas ou Ideias."
+        );
+
+        Conceito maiêutica = new Conceito(
+            "Maiêutica",
+            "Método socrático que utiliza perguntas para ajudar uma pessoa a examinar e desenvolver suas ideias."
+        );
+
+        Conceito existencialismo = new Conceito(
+            "Existencialismo",
+            "Corrente filosófica que aborda a existência humana, a liberdade e a responsabilidade."
+        );
+
+        Conceito duvidaMetodica = new Conceito(
+            "Dúvida Metódica",
+            "Método filosófico de René Descartes que consiste em questionar todas as crenças que possam apresentar alguma dúvida, buscando encontrar uma verdade indubitável."
+        );
+
+        Conceito hedonismo = new Conceito(
+            "Hedonismo",
+            "uma doutrina filosófica que defende a busca pelo prazer e a evitação da dor como os objetivos centrais e o bem supremo da vida humana."
+        );
+
+        Conceito imperativo = new Conceito(
+            "Imperativo Categórico",
+            "um princípio ético absoluto, incondicional e universal que deve guiar todas as ações humanas, ordenando que uma pessoa aja sempre por dever e de acordo com leis que possam ser aplicadas a todos."
+        );
+
+        Conceito niilismo = new Conceito(
+            "Niilismo",
+            "Conceito associado à crítica de Nietzsche aos valores e às verdades tradicionais, especialmente aos valores absolutos."
+        );
+
+        Conceito contratoSocial = new Conceito(
+            "Contrato Social",
+            "explica a origem do Estado e a legitimação do poder político através de um acordo hipotético entre os indivíduos, que abrem mão de parte de sua liberdade natural em troca de segurança, ordem e direitos."
+        );
+
+        conceitos.add(virtude);
+        conceitos.add(mundoIdeias);
+        conceitos.add(maiêutica);
+        conceitos.add(existencialismo);
+        conceitos.add(duvidaMetodica);
+        conceitos.add(hedonismo);
+        conceitos.add(imperativo);
+        conceitos.add(niilismo);
+        conceitos.add(contratoSocial);
+
+    }
+
+        public ArrayList<Conceito> getConceitos() {
+        
+        return conceitos;
+    }
+
+    public Conceito buscarPorNome(String nome) {
+
+        for (Conceito conceito : conceitos) {
+
+            if (conceito.getNome().equalsIgnoreCase(nome)) {
+                return conceito;
+            }
+        }
+
+        return null;
+    }
+}
