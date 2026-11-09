@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Regra {
 
@@ -34,6 +33,23 @@ public class Regra {
 
         return false;
     }
+
+    //em desenvolvimento...
+    //public int calcularPontuacao(String texto) {
+
+    //texto = texto.toLowerCase();
+
+    //int pontuacao = 0;
+
+    //for (String palavra : palavrasChave) {
+
+        //if (texto.contains(palavra.toLowerCase())) {
+            //pontuacao++;
+        //}
+    //}
+
+    //return pontuacao;
+//}
 
     public String getTema() {
         return tema;
