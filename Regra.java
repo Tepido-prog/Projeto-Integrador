@@ -34,22 +34,21 @@ public class Regra {
         return false;
     }
 
-    //em desenvolvimento...
-    //public int calcularPontuacao(String texto) {
+    public int calcularPontuacao(String texto) {
 
-    //texto = texto.toLowerCase();
+    texto = texto.toLowerCase();
 
-    //int pontuacao = 0;
+    int pontuacao = 0;
 
-    //for (String palavra : palavrasChave) {
+    for (String palavra : palavrasChave) {
 
-        //if (texto.contains(palavra.toLowerCase())) {
-            //pontuacao++;
-        //}
-    //}
+        if (texto.contains(palavra.toLowerCase())) {
+            pontuacao++;
+        }
+    }
 
-    //return pontuacao;
-//}
+    return pontuacao;
+}
 
     public String getTema() {
         return tema;
