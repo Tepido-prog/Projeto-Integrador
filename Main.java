@@ -1,13 +1,9 @@
 import java.util.Scanner;
 
+//ANTES DE RODAR O PROGRAMA, CRIE UM NOVO TERMINAL E DIGITE ESSAS LINHAS DE CÓDIGO:
 //chcp 65001
 //javac -encoding UTF-8 *.java
 //java Main
-
-//A virtude e os habitos sao importantes para alcancar a felicidade.
-//A realidade inteligivel e diferente do mundo material, pois o mundo das ideias representa uma realidade superior.
-//O ser humano possui liberdade para fazer escolhas e deve assumir a responsabilidade por suas decisoes.
-//As nuvens se movimentam lentamente enquanto o vento sopra sobre o campo.
 
 public class Main {
     public static void main(String[] args) {
