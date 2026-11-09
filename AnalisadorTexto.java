@@ -1,111 +1,26 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class AnalisadorTexto {
 
-    private ArrayList<Regra> regras = new ArrayList<>();
+    private RepositorioAutor repositorioAutor;
+    private RepositorioConceito repositorioConceito;
+    private RepositorioRegras repositorioRegras;
+    private DicionarioFilosofico dicionario = new DicionarioFilosofico();
 
     public AnalisadorTexto() {
 
-        // ===== AUTORES =====
+        repositorioAutor = new RepositorioAutor();
 
-        Autor aristoteles = new Autor(
-            "Aristóteles",
-            "Filosofia Antiga"
+        repositorioConceito = new RepositorioConceito();
+
+        repositorioRegras = new RepositorioRegras(
+            repositorioAutor,
+            repositorioConceito
         );
-
-        Autor plato = new Autor(
-            "Platão",
-            "Filosofia Antiga"
-        );
-
-        Autor socrates = new Autor(
-            "Sócrates",
-            "Filosofia Antiga"
-        );
-
-        Autor sartre = new Autor(
-            "Jean-Paul Sartre",
-            "Filosofia Contemporânea"
-        );
-
-
-        // ===== CONCEITOS =====
-
-        Conceito virtude = new Conceito(
-            "Virtude",
-            "Disposição para agir de maneira excelente, relacionada à formação do caráter."
-        );
-
-        Conceito mundoIdeias = new Conceito(
-            "Mundo das Ideias",
-            "Na filosofia platônica, refere-se à realidade inteligível das Formas ou Ideias."
-        );
-
-        Conceito maiêutica = new Conceito(
-            "Maiêutica",
-            "Método socrático que utiliza perguntas para ajudar uma pessoa a examinar e desenvolver suas ideias."
-        );
-
-        Conceito existencialismo = new Conceito(
-            "Existencialismo",
-            "Corrente filosófica que aborda a existência humana, a liberdade e a responsabilidade."
-        );
-
-        // ===== REGRAS =====
-
-        regras.add(new Regra(
-        new ArrayList<>(Arrays.asList(
-            "virtude",
-            "felicidade",
-            "hábitos",
-            "justiça"
-        )),
-    "Ética",
-    virtude,
-    aristoteles
-));
-
-        regras.add(new Regra(
-        new ArrayList<>(Arrays.asList(
-            "mundo das ideias",
-            "formas perfeitas",
-            "realidade inteligível"
-    )),
-    "Conhecimento",
-    mundoIdeias,
-    plato
-));
-
-        regras.add(new Regra(
-        new ArrayList<>(Arrays.asList(
-            "maiêutica",
-            "fazer perguntas",
-            "examinar ideias"
-    )),
-    "Conhecimento",
-    maiêutica,
-    socrates
-));
-
-        regras.add(new Regra(
-        new ArrayList<>(Arrays.asList(
-            "liberdade",
-            "escolhas",
-            "responsabilidade",
-            "existência"
-    )),
-    "Liberdade e existência",
-    existencialismo,
-    sartre
-));
-
     }
 
     public void analisar(Texto texto) {
 
         System.out.println("Texto recebido: " + texto.getConteudo());
-System.out.println("Quantidade de regras: " + regras.size());
+        System.out.println("Quantidade de regras: " + repositorioRegras.getRegras().size());
 
         System.out.println("========================================");
         System.out.println("          ANÁLISE FILOSÓFICA");
@@ -113,10 +28,9 @@ System.out.println("Quantidade de regras: " + regras.size());
 
         boolean encontrou = false;
 
-        for (Regra regra : regras) {
+        for (Regra regra : repositorioRegras.getRegras()) {
 
             if (regra.verificar(texto.getConteudo())) {
-
                 encontrou = true;
 
                 System.out.println("\nPossível autor associado: "
@@ -150,6 +64,10 @@ System.out.println("Quantidade de regras: " + regras.size());
             );
         }
 
-        System.out.println("========================================");
+        System.out.println("\n========================================");
+System.out.println("       DICIONÁRIO FILOSÓFICO");
+System.out.println("========================================");
+
+dicionario.buscarNoTexto(texto.getConteudo());
     }
 }
