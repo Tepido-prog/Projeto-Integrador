@@ -3,12 +3,10 @@ public class Texto {
     private String autor;
     private String epoca;
 
-
     public Texto(String conteudo) {
         this.conteudo = conteudo;
         this.autor = "Desconhecido";
         this.epoca = "Não identificada";
-        //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public String getConteudo() {
