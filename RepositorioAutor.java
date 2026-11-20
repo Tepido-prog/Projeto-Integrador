@@ -4,9 +4,9 @@ public class RepositorioAutor {
 
         private ArrayList<Autor> autores = new ArrayList<>();
     
-        public RepositorioAutor(){
+        public RepositorioAutor() {
 
-            Autor aristoteles = new Autor(
+        Autor aristoteles = new Autor(
             "Aristóteles",
             "Filosofia Antiga (Período Clássico)"
         );
@@ -62,8 +62,73 @@ public class RepositorioAutor {
         );
 
         Autor thomas = new Autor(
-        "Thomas Hobbes",
-        "Filosofia Moderna"
+            "Thomas Hobbes",
+            "Filosofia Moderna"
+        );
+
+        Autor efeso = new Autor(
+            "Heráclito de Éfeso",
+            "Filosofia Antiga (Período Pré-Socrático)"
+        );
+
+        Autor demo = new Autor(
+            "Demócrito",
+            "Filosofia Antiga (Período Pré-Socrático)"
+        );
+
+        Autor seneca = new Autor(
+            "Sêneca",
+            "Filosofia Antiga"
+        );
+
+        Autor nicolau = new Autor(
+            "Nicolau Maquiavel",
+            "Filosofia Moderna"
+        );
+
+        Autor bacon = new Autor(
+            "Francis Bacon",
+            "Filosofia Moderna"
+        );
+
+        Autor baruch = new Autor(
+            "Baruch Spinoza",
+            "Filosofia Moderna"
+        );
+
+        Autor locke = new Autor(
+            "John Locke",
+            "Filosofia Moderna"
+        );
+
+        Autor david = new Autor(
+            "David Hume",
+            "Filosofia Moderna"
+        );
+
+        Autor jean = new Autor(
+            "Jean-Jacques Rousseau",
+            "Filosofia Moderna"
+        );
+
+        Autor karl = new Autor(
+            "Karl Marx",
+            "Filosofia Contemporânea"
+        );
+
+        Autor georg = new Autor(
+            "Georg Wilhelm Friedrich Hegel",
+            "Filosofia Contemporânea"
+        );
+
+        Autor hannah = new Autor(
+            "Hannah Arendt",
+            "Filosofia Contemporânea"
+        );
+
+        Autor michel = new Autor(
+            "Michel Foucault",
+            "Filosofia Contemporânea"
         );
 
         autores.add(aristoteles);
@@ -78,15 +143,26 @@ public class RepositorioAutor {
         autores.add(kant);
         autores.add(fried);
         autores.add(thomas);
+        autores.add(efeso);
+        autores.add(demo);
+        autores.add(seneca);
+        autores.add(nicolau);
+        autores.add(bacon);
+        autores.add(baruch);
+        autores.add(locke);
+        autores.add(david);
+        autores.add(jean);
+        autores.add(karl);
+        autores.add(georg);
+        autores.add(hannah);
+        autores.add(michel);
     }
 
     public ArrayList<Autor> getAutores() {
-        
         return autores;
     }
 
     public Autor buscarPorNome(String nome) {
-
     for (Autor autor : autores) {
 
         if (autor.getNome().equalsIgnoreCase(nome)) {
