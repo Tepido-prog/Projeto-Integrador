@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class Regra {
 
@@ -19,21 +20,6 @@ public class Regra {
         this.autor = autor;
     }
 
-    // Verifica se pelo menos uma palavra-chave aparece no texto
-    public boolean verificar(String texto) {
-
-        String textoMinusculo = texto.toLowerCase();
-
-        for (String palavra : palavrasChave) {
-
-            if (textoMinusculo.contains(palavra.toLowerCase())) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     public int calcularPontuacao(String texto) {
 
     texto = texto.toLowerCase();
@@ -42,7 +28,11 @@ public class Regra {
 
     for (String palavra : palavrasChave) {
 
-        if (texto.contains(palavra.toLowerCase())) {
+        String regex = "(?<![\\p{L}\\p{N}])"
+                     + Pattern.quote(palavra.toLowerCase())
+                     + "(?![\\p{L}\\p{N}])";
+
+        if (Pattern.compile(regex).matcher(texto).find()) {
             pontuacao++;
         }
     }
