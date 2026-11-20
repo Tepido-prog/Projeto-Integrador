@@ -33,12 +33,12 @@ public class RepositorioConceito {
 
         Conceito hedonismo = new Conceito(
             "Hedonismo",
-            "uma doutrina filosófica que defende a busca pelo prazer e a evitação da dor como os objetivos centrais e o bem supremo da vida humana."
+            "Uma doutrina filosófica que defende a busca pelo prazer e a evitação da dor como os objetivos centrais e o bem supremo da vida humana."
         );
 
         Conceito imperativo = new Conceito(
             "Imperativo Categórico",
-            "um princípio ético absoluto, incondicional e universal que deve guiar todas as ações humanas, ordenando que uma pessoa aja sempre por dever e de acordo com leis que possam ser aplicadas a todos."
+            "Princípio ético absoluto, incondicional e universal que deve orientar as ações humanas, determinando que uma pessoa aja por dever e segundo leis que possam ser aplicadas a todos."
         );
 
         Conceito niilismo = new Conceito(
@@ -48,7 +48,77 @@ public class RepositorioConceito {
 
         Conceito contratoSocial = new Conceito(
             "Contrato Social",
-            "explica a origem do Estado e a legitimação do poder político através de um acordo hipotético entre os indivíduos, que abrem mão de parte de sua liberdade natural em troca de segurança, ordem e direitos."
+            "Explica a origem do Estado e a legitimação do poder político através de um acordo hipotético entre os indivíduos, que abrem mão de parte de sua liberdade natural em troca de segurança, ordem e direitos."
+        );
+
+        Conceito empirismo = new Conceito(
+            "Empirismo",
+            "Sustenta que o conhecimento humano tem origem na experiência, especialmente por meio das sensações e da observação."
+        );
+
+        Conceito ceticismo = new Conceito(
+            "Ceticismo",
+            "É a postura de duvidar da possibilidade de alcançar verdades absolutas, exigindo provas rigorosas antes de aceitar qualquer afirmação."
+        );
+
+        Conceito estoicismo = new Conceito(
+            "Estoicismo",
+            "Corrente filosófica que defende o desenvolvimento da razão e do autocontrole para alcançar a tranquilidade, aceitando aquilo que não podemos controlar."
+        );
+
+        Conceito dialetica = new Conceito(
+            "Dialética",
+            "É o método de chegar à verdade ou evoluir uma ideia por meio do debate e do choque entre conceitos opostos."
+        );
+
+        Conceito arche = new Conceito(
+            "Arché",
+            "Princípio fundamental, a origem ou a substância primordial de todas as coisas que existem no universo."
+        );
+
+        Conceito harmoniaMatematica = new Conceito(
+            "Harmonia Matemática",
+            "Os números são a essência e o princípio organizador (arché) de todo o universo."
+        );
+
+        Conceito imobilismo = new Conceito(
+            "Imobilismo",
+            "Doutrina filosófica desenvolvida por Parmênides de Eleia (século V a.C.) que afirma que o movimento, a mudança e a multiplicidade são ilusões dos sentidos, pois a verdadeira realidade é única, eterna e imutável."
+        );
+
+        Conceito devir = new Conceito(
+            "Devir",
+            "Conceito filosófico que designa o fluxo constante de mudança, transformação e movimento pelo qual todas as coisas passam."
+        );
+
+        Conceito atomismo = new Conceito(
+            "Atomismo",
+            "Doutrina filosófica que afirma que toda a realidade existente é composta exclusivamente por partículas físicas minúsculas, indivisíveis e eternas chamadas átomos, que se movem livremente no espaço vazio (vácuo)."
+        );
+
+        Conceito realismoPolitico = new Conceito(
+            "Realismo Político",
+            "Corrente da filosofia política e das relações internacionais que afirma que a política é regida pela busca do poder, pelo interesse próprio e pela necessidade de sobrevivência."
+        );
+
+        Conceito substancia = new Conceito(
+            "Substância",
+            "É aquilo que existe por si mesmo e serve de suporte permanente para as qualidades e mudanças de um ser."
+        );
+
+        Conceito materialismoHistorico = new Conceito(
+            "Materialismo Histórico",
+            "Método de análise sociológica, econômica e filosófica que afirma que o desenvolvimento da história e a organização das sociedades são determinados principalmente pelas condições materiais de existência e pela forma como os seres humanos produzem seus meios de vida."
+        );
+
+        Conceito totalitarismo = new Conceito(
+            "Totalitarismo",
+            "Um sistema político e uma forma de dominação moderna em que o Estado concentra poder absoluto e busca controlar não apenas a vida pública, mas também a esfera privada, os pensamentos, as emoções e o comportamento íntimo de cada indivíduo."
+        );
+
+        Conceito poderEsaber = new Conceito(
+            "Poder e Saber",
+            "Relação entre poder e conhecimento na sociedade. Para Foucault, o conhecimento não está separado das relações de poder: instituições, discursos e práticas sociais produzem conhecimentos que também influenciam o comportamento dos indivíduos."
         );
 
         conceitos.add(virtude);
@@ -60,23 +130,35 @@ public class RepositorioConceito {
         conceitos.add(imperativo);
         conceitos.add(niilismo);
         conceitos.add(contratoSocial);
+        conceitos.add(empirismo);
+        conceitos.add(ceticismo);
+        conceitos.add(estoicismo);
+        conceitos.add(dialetica);
+        conceitos.add(arche);
+        conceitos.add(harmoniaMatematica);
+        conceitos.add(imobilismo);
+        conceitos.add(devir);
+        conceitos.add(atomismo);
+        conceitos.add(realismoPolitico);
+        conceitos.add(substancia);
+        conceitos.add(materialismoHistorico);
+        conceitos.add(totalitarismo);
+        conceitos.add(poderEsaber);
 
     }
 
         public ArrayList<Conceito> getConceitos() {
-        
         return conceitos;
     }
 
     public Conceito buscarPorNome(String nome) {
-
         for (Conceito conceito : conceitos) {
 
             if (conceito.getNome().equalsIgnoreCase(nome)) {
                 return conceito;
             }
         }
-
+        
         return null;
     }
 }
